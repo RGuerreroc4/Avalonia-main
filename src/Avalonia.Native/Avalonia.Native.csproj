@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>$(AvsCurrentTargetFramework);$(AvsLegacyTargetFrameworks)</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseMicroComGeneratorRoslyn>true</UseMicroComGeneratorRoslyn>
+
+    <!-- Include libAvaloniaNative.dylib, only if we are on macOS host or dylib was manually copied -->
+    <AvaloniaNativeDylibPath>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)../../Build/Products/Release/libAvalonia.Native.OSX.dylib))</AvaloniaNativeDylibPath>
+    <IncludeAvaloniaDylib Condition="'$(IncludeAvaloniaDylib)' == '' AND Exists($(AvaloniaNativeDylibPath))">true</IncludeAvaloniaDylib>
+    <IncludeAvaloniaDylib Condition="'$(IncludeAvaloniaDylib)' == ''">$([MSBuild]::IsOSPlatform(OSX))</IncludeAvaloniaDylib>
+
+    <!-- It only makes sense to pack Avalonia.Native, if it includes dylib, of if it was enforced -->
+    <IsPackable>$(IncludeAvaloniaDylib)</IsPackable>
+    <IsPackable Condition="'$(ForcePackAvaloniaNative)' == 'True'">True</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IncludeAvaloniaDylib)' == 'true'">
+    <Content Include="$(AvaloniaNativeDylibPath)">
+      <Link>libAvaloniaNative.dylib</Link>
+      <PackagePath>runtimes/osx/native/libAvaloniaNative.dylib</PackagePath>
+      <Pack>true</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\packages\Avalonia\Avalonia.csproj" />
+    <ProjectReference Include="..\Avalonia.Dialogs\Avalonia.Dialogs.csproj" />
+    <MicroComIdl Include="avn.idl" />
+  </ItemGroup>
+
+  <Import Project="..\..\build\MicroCOM.props" />
+  <Import Project="..\..\build\DevAnalyzers.props" />
+  <Import Project="..\..\build\TrimmingEnable.props" />
+  <Import Project="..\..\build\NullableEnable.props" />
+</Project>
