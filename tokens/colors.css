@@ -1,0 +1,96 @@
+/* Base palette — Accents/BaseColorsPalette.xaml (WinUI "System*Color" ramp).
+   Values are verbatim from the repo; #AARRGGBB has been rewritten as #RRGGBBAA. */
+:root{
+  /* Accent — SystemAccentColors.cs default Color.FromRgb(0,120,215),
+     shades computed by CalculateAccentShades() in HSL lightness steps. */
+  --accent: #0078d7;
+  --accent-dark-1: #005a9e;
+  --accent-dark-2: #00457a;
+  --accent-dark-3: #002c4f;
+  --accent-light-1: #429ce3;
+  --accent-light-2: #76b9ec;
+  --accent-light-3: #b0d8f7;
+
+  /* Notification / status — theme-independent */
+  --status-info: #0078d4;
+  --status-success: #7ed321;
+  --status-warning: #f57d1b;
+  --status-error: #f03916;
+  --hyperlink-visited: #681da8;
+
+  /* Dark theme ("Dark" ThemeDictionary) is the DEFAULT base ramp */
+  --alt-high: #000000;
+  --alt-low: #00000033;
+  --alt-medium: #00000099;
+  --alt-medium-high: #000000cc;
+  --alt-medium-low: #00000066;
+  --base-high: #ffffff;
+  --base-low: #ffffff33;
+  --base-medium: #ffffff99;
+  --base-medium-high: #ffffffcc;
+  --base-medium-low: #ffffff66;
+  --chrome-alt-low: #f2f2f2;
+  --chrome-black-high: #000000;
+  --chrome-black-low: #00000033;
+  --chrome-black-medium: #000000cc;
+  --chrome-black-medium-low: #00000066;
+  --chrome-disabled-high: #333333;
+  --chrome-disabled-low: #858585;
+  --chrome-high: #767676;
+  --chrome-low: #171717;
+  --chrome-medium: #1f1f1f;
+  --chrome-medium-low: #2b2b2b;
+  --chrome-white: #ffffff;
+  --chrome-gray: #767676;
+  --list-low: #ffffff19;
+  --list-medium: #ffffff33;
+  --error-text: #f03916;
+  --region: #000000;
+  --reveal-list-low: #ffffff18;
+  --reveal-list-medium: #ffffff30;
+}
+
+/* Light theme ("Default" ThemeDictionary) — opt in with data-theme="light" */
+:root[data-theme="light"]{
+  --alt-high: #ffffff;
+  --alt-low: #ffffff33;
+  --alt-medium: #ffffff99;
+  --alt-medium-high: #ffffffcc;
+  --alt-medium-low: #ffffff66;
+  --base-high: #000000;
+  --base-low: #00000033;
+  --base-medium: #00000099;
+  --base-medium-high: #000000cc;
+  --base-medium-low: #00000066;
+  --chrome-alt-low: #171717;
+  --chrome-disabled-high: #cccccc;
+  --chrome-disabled-low: #7a7a7a;
+  --chrome-high: #cccccc;
+  --chrome-low: #f2f2f2;
+  --chrome-medium: #e6e6e6;
+  --chrome-medium-low: #f2f2f2;
+  --list-low: #00000019;
+  --list-medium: #00000033;
+  --error-text: #f03916;
+  --region: #ffffff;
+  --reveal-list-low: #00000017;
+  --reveal-list-medium: #0000002e;
+}
+
+/* Pulse — accent scheme of the dark mobile showcase in samples/ControlCatalog (Pulse*View.xaml) */
+:root{
+  --pulse-accent: #256af4;
+  --pulse-accent-hover: #1d5ad4;
+  --pulse-accent-pressed: #1a4fbf;
+  --pulse-bg: #0b0b0b;
+  --pulse-surface: #1a1a1a;
+  --pulse-surface-2: #1e293b;
+  --pulse-surface-3: #253352;
+  --pulse-hairline: #1e293b;
+  --pulse-text: #ffffff;
+  --pulse-text-2: #cbd5e1;
+  --pulse-text-3: #94a3b8;
+  --pulse-text-4: #64748b;
+  --pulse-green: #7ed321;
+  --pulse-orange: #f57d1b;
+}

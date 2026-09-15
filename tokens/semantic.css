@@ -1,0 +1,55 @@
+/* Semantic aliases — the names control authors actually reach for. Each maps to
+   the Fluent brush it stands in for (see comments). */
+:root{
+  --text-body: var(--base-high);                   /* SystemControlForegroundBaseHighBrush */
+  --text-secondary: var(--base-medium);            /* SystemControlPageTextBaseMediumBrush */
+  --text-tertiary: var(--base-medium-low);
+  --text-disabled: var(--base-medium-low);         /* SystemControlDisabledBaseMediumLowBrush */
+  --text-on-accent: var(--chrome-white);           /* AccentButtonForeground */
+  --text-placeholder: var(--base-medium);          /* TextControlPlaceholderForeground */
+  --text-error: var(--error-text);
+  --text-link: var(--accent);                      /* HyperlinkButtonForeground */
+  --text-link-pressed: var(--accent-dark-1);
+  --text-link-visited: var(--hyperlink-visited);
+
+  --surface-page: var(--region);                   /* SystemRegionBrush */
+  --surface-card: var(--chrome-medium-low);
+  --surface-subtle: var(--chrome-low);
+  --surface-control: var(--base-low);              /* ButtonBackground */
+  --surface-control-hover: #ffffff1a;              /* base-high @ 10% (dark default) */
+  --surface-control-pressed: var(--base-medium-low);
+  --surface-control-disabled: var(--base-low);
+  --surface-input: var(--alt-medium-low);          /* TextControlBackground */
+  --surface-input-hover: var(--alt-medium);
+  --surface-input-focus: var(--alt-high);
+  --surface-accent: var(--accent);
+  --surface-accent-hover: var(--accent-light-1);
+  --surface-accent-pressed: var(--accent-dark-1);
+  --surface-transient: var(--chrome-medium-low);   /* flyouts, menus, dropdowns */
+  --surface-list-hover: var(--list-low);           /* SystemControlHighlightListLowBrush */
+  --surface-list-pressed: var(--list-medium);
+  --surface-list-selected: color-mix(in srgb, var(--accent) 40%, transparent);
+
+  --border-control: var(--base-medium);            /* ButtonBorderBrush-equivalent stroke */
+  --border-control-hover: var(--base-medium-high);
+  --border-focus: var(--accent);                   /* TextControlBorderBrushFocused */
+  --border-disabled: var(--base-low);
+  --border-transient: var(--transient-border-dark);
+  --border-hairline: var(--base-low);
+
+  --focus-ring-primary: var(--base-high);          /* SystemControlFocusVisualPrimaryBrush */
+  --focus-ring-secondary: var(--alt-medium);
+
+  /* recessed wash for a card's action-footer band */
+  --surface-footer: color-mix(in srgb, #000 30%, transparent);
+  /* legible mark/text on the bright success green */
+  --text-on-success: #10141a;
+  /* faint separator between stacked rows */
+  --divider-row: rgba(255,255,255,.05);
+}
+:root[data-theme="light"]{
+  --surface-control-hover: #0000001a;
+  --border-transient: var(--transient-border-light);
+  --surface-footer: color-mix(in srgb, #101828 5%, transparent);
+  --divider-row: color-mix(in srgb, #101828 5%, transparent);
+}

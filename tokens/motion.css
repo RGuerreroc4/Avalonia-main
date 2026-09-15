@@ -1,0 +1,14 @@
+/* Avalonia animates with explicit Transitions on control templates: short
+   cross-fades on background/foreground, transform scales on scrollbar thumbs. */
+:root{
+  --duration-instant: 83ms; /* @kind other */
+  --duration-fast: 167ms; /* @kind other */
+  --duration-normal: 250ms; /* @kind other */
+  --duration-slow: 500ms; /* @kind other */
+  --ease-standard: cubic-bezier(0.4, 0, 0.6, 1); /* @kind other */
+  --ease-decel: cubic-bezier(0, 0, 0, 1); /* @kind other */
+  --ease-accel: cubic-bezier(0.7, 0, 1, 0.5); /* @kind other */
+  --transition-control: background-color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+  --scrollbar-thumb-scale-x: scaleX(0.125) translateX(-2px); /* @kind other */
+  --scrollbar-thumb-scale-y: scaleY(0.125) translateY(-2px); /* @kind other */
+}

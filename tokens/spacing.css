@@ -1,0 +1,42 @@
+/* Avalonia spaces with Thickness/Spacing values, not a strict 4px grid.
+   These are the literal values used in the theme and samples. */
+:root{
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-32: 32px;
+  --space-48: 48px;
+
+  /* Control padding — exact Thickness values from the Fluent resources */
+  --padding-button: 8px 5px 6px;                 /* ButtonPadding 8,5,8,6 */
+  --padding-text-control: 6px 6px 5px 10px;      /* TextControlThemePadding 10,6,6,5 */
+  --padding-combobox-item: 5px 11px 7px;         /* ComboBoxItemThemePadding 11,5,11,7 */
+  --padding-menu-item: 9px 11px 10px;            /* MenuFlyoutItemThemePadding 11,9,11,10 */
+  --padding-menu-item-narrow: 4px 11px 7px;      /* MenuFlyoutItemThemePaddingNarrow */
+  --padding-menubar-item: 0 12px;                /* MenuBarItemPadding 12,0,12,0 */
+  --padding-flyout-content: 11px 12px 12px;      /* FlyoutContentThemePadding 12,11,12,12 */
+  --padding-groupbox: 4px;                       /* GroupBoxPadding */
+
+  /* Control metrics */
+  --control-min-height: 32px;                    /* TextControlThemeMinHeight */
+  --control-height: 32px;                         /* shared inline control height — buttons + text fields */
+  --control-min-width: 64px;                     /* TextControlThemeMinWidth / ComboBoxThemeMinWidth */
+  --menu-item-min-height: 32px;                  /* MenuFlyoutThemeMinHeight */
+  --icon-size: 20px;                             /* IconElementThemeHeight/Width */
+  --icon-size-sm: 16px;                          /* PathIcon in nav lists */
+  --progress-height: 4px;                        /* ProgressBarThemeMinHeight */
+  --slider-track-height: 2px;                    /* SliderTrackThemeHeight */
+  --slider-tick-height: 4px;                     /* SliderOutsideTickBarThemeHeight */
+  --refresh-indicator-size: 24px;
+  --drawer-width: 260px;                         /* MainView.xaml DrawerLength */
+  --drawer-width-compact: 52px;                  /* CompactDrawerLength */
+  --autocomplete-list-max-height: 374px;
+  --flyout-max-width: 456px;
+  --flyout-max-height: 758px;
+}

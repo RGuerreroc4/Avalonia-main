@@ -1,0 +1,40 @@
+<!-- @dsCard group="Components" viewport="360x560" name="Project navigator" subtitle="SearchBox, SegmentedControl and the TreeView room/device menu composed as a nav panel" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:16px;background:var(--surface-page);font-family:var(--font-core);color:var(--text-body)}.panel{display:flex;flex-direction:column;gap:12px;width:320px;padding:12px;background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:12px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { SearchBox, SegmentedControl, TreeView } = window.AvaloniaFluentDesignSystem_a08390;
+const LIGHT="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z";
+const SPEAKER="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z";
+const THERMO="M15,13V5A3,3 0 0,0 12,2A3,3 0 0,0 9,5V13A5,5 0 1,0 15,13M12,4A1,1 0 0,1 13,5V8H11V5A1,1 0 0,1 12,4Z";
+const CAM="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z";
+const LOCK="M12,17A2,2 0 0,0 14,15C14,13.89 13.1,13 12,13A2,2 0 0,0 10,15A2,2 0 0,0 12,17M18,8A2,2 0 0,1 20,10V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V10C4,8.89 4.9,8 6,8H7V6A5,5 0 0,1 12,1A5,5 0 0,1 17,6V8H18M12,3A3,3 0 0,0 9,6V8H15V6A3,3 0 0,0 12,3Z";
+const NODES=[
+ {name:'Main House',count:2,items:[
+   {name:'Living Room',count:4,items:[
+     {name:'Ceiling Lights',icon:LIGHT,status:'on'},
+     {name:'Soundbar',icon:SPEAKER,status:'on'},
+     {name:'Thermostat',icon:THERMO,status:'off'},
+     {name:'Front Camera',icon:CAM,status:'on'},
+   ]},
+   {name:'Kitchen',count:2,items:[
+     {name:'Under-Cabinet',icon:LIGHT,status:'off'},
+     {name:'Door Lock',icon:LOCK,status:'on'},
+   ]},
+ ]},
+ {name:'Garage',count:1,defaultExpanded:false,items:[
+   {name:'Bay Camera',icon:CAM,status:'off'},
+ ]},
+];
+function App(){ const [q,setQ]=React.useState(''); const [seg,setSeg]=React.useState('Rooms'); const [sel,setSel]=React.useState('0/0/0');
+ return <div className="panel">
+  <SearchBox placeholder="Search Project" value={q} onChange={setQ} />
+  <SegmentedControl items={['Rooms','Categories']} value={seg} onChange={setSeg} style={{alignSelf:'flex-start'}} />
+  <TreeView nodes={NODES} selected={sel} onSelect={setSel} />
+ </div>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>
