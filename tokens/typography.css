@@ -1,0 +1,31 @@
+/* ControlContentThemeFontSize = 14 (BaseResources.xaml). Sizes below are the
+   literal FontSize values used across the Fluent theme + ControlCatalog samples. */
+:root{
+  --font-core: "Inter", "Segoe UI", -apple-system, system-ui, sans-serif;
+  --font-mono: "Cascadia Code", Consolas, Menlo, monospace;
+
+  --font-size-9: 9px;   /* micro eyebrow (Pulse difficulty tag) */
+  --font-size-10: 10px; /* letterspaced label */
+  --font-size-11: 11px;
+  --font-size-12: 12px; /* CalendarDayButtonFontSize, secondary body */
+  --font-size-13: 13px;
+  --font-size-14: 14px; /* control content — the base size */
+  --font-size-16: 16px; /* GroupBoxHeaderFontSize */
+  --font-size-18: 18px;
+  --font-size-20: 20px; /* CalendarFontSize, TabbedPageTabItemHeaderFontSize */
+  --font-size-26: 26px; /* Pulse "Welcome Back" */
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-loose: 1.55;
+
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 1px;   /* LetterSpacing="1" */
+  --letter-spacing-wider: 2px;  /* LetterSpacing="2" */
+}

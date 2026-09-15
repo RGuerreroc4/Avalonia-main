@@ -1,0 +1,32 @@
+<!-- @dsCard group="Patterns" viewport="700x360" name="Chips & card footer" subtitle="data-chip pill (neutral + 5 tones) and the data-card-footer action band" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="./styles.css"><style>body{margin:0;padding:16px;background:var(--surface-page);font-family:var(--font-core);color:var(--text-body)}.stack{display:flex;flex-direction:column;gap:18px}.eyebrow{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-tertiary);margin:0 0 8px}.row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.card{width:340px;background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:6px;overflow:hidden}.card .body{padding:14px 16px}.card .title{font-size:13px;font-weight:600;margin:0 0 4px}.card .meta{font-size:12px;color:var(--text-secondary);margin:0}.card .foot{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px}.btn{font:500 12px var(--font-core);padding:5px 12px;border-radius:4px;border:1px solid var(--border-control);background:var(--surface-input);color:var(--text-body);cursor:pointer}.btn.accent{background:var(--accent);border-color:var(--accent);color:#fff}</style></head><body>
+<div class="stack">
+<div>
+<p class="eyebrow">Chip — tones</p>
+<div class="row">
+<span data-chip>Neutral</span>
+<span data-chip="accent">Accent</span>
+<span data-chip="success">Passed</span>
+<span data-chip="warning">Review</span>
+<span data-chip="critical">Failed</span>
+<span data-chip="info">Beta</span>
+</div>
+</div>
+<div>
+<p class="eyebrow">Card footer — recessed action band</p>
+<div class="card">
+<div class="body">
+<p class="title">ControlCatalog.Desktop</p>
+<p class="meta">Last build 4.2s ago · net8.0</p>
+</div>
+<div class="foot" data-card-footer>
+<span data-chip="success">Passing</span>
+<div class="row">
+<button class="btn">Logs</button>
+<button class="btn accent">Rebuild</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,37 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Containers & feedback" subtitle="Frosted-glass Card, Expander, ListItem, TabItem, ProgressBar, NotificationCard" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:16px;background:var(--surface-page);font-family:var(--font-core);color:var(--text-body)}.row{display:flex;flex-wrap:wrap;align-items:center;gap:12px}.col{display:flex;flex-direction:column;gap:12px}.lbl{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-tertiary)}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const { Card, Expander, ListItem, TabItem, ProgressBar, NotificationCard, PathIcon } = window.AvaloniaFluentDesignSystem_a08390;
+const LAYERS="M12,16L19.36,10.27L21,9L12,2L3,9L4.63,10.27M12,18.54L4.62,12.81L3,14.07L12,21.07L21,14.07L19.37,12.8";
+const TUNE="M3,17V19H9V17H3M3,5V7H13V5H3M13,21V19H21V17H13V15H11V21H13M7,9V11H3V13H7V15H9V9H7M21,13V11H11V13H21M15,9H17V7H21V5H17V3H15V9Z";
+function App(){ const [tab,setTab]=React.useState(0);
+ return <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'20px'}}>
+  <div className="col">
+   <div className="row" style={{gap:0,borderBottom:'1px solid var(--border-hairline)'}}>
+    {['Home','Controls','Settings'].map((t,i)=><TabItem key={t} selected={tab===i} onClick={()=>setTab(i)} icon={i===2?<PathIcon data={TUNE} size={16}/>:null}>{t}</TabItem>)}
+   </div>
+   <div style={{display:'flex',flexDirection:'column',gap:2}}>
+    <ListItem selected icon={<PathIcon data={LAYERS} size={16}/>}>Layout</ListItem>
+    <ListItem icon={<PathIcon data={TUNE} size={16}/>}>Slider</ListItem>
+    <ListItem icon={<PathIcon data={LAYERS} size={16}/>}>Transitions</ListItem>
+   </div>
+   <Expander header="Settings">Window decorations, theme variant and transparency level.</Expander>
+  </div>
+  <div className="col">
+   <div style={{position:'relative',padding:20,borderRadius:'var(--radius-card)',background:'linear-gradient(135deg,#0078d4 0%,#7ed321 50%,#f57d1b 100%)'}}>
+    <Card>Card — frosted glass: #fff at 15% over a 60px background blur, no border.</Card>
+   </div>
+   <ProgressBar value={62} showText />
+   <ProgressBar indeterminate />
+   <NotificationCard type="success" title="Build succeeded" onClose={()=>{}}>ControlCatalog.Desktop compiled in 4.2s.</NotificationCard>
+   <NotificationCard type="error" title="XAML compiler error">Unknown property 'Foo' on Border.</NotificationCard>
+  </div>
+ </div>; }
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

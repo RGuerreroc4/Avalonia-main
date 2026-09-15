@@ -1,0 +1,22 @@
+/* Shape and stroke. ControlCornerRadius 4, OverlayCornerRadius 8. */
+:root{
+  --radius-control: 4px;   /* ControlCornerRadius */
+  --radius-overlay: 8px;   /* OverlayCornerRadius */
+  --radius-card: 8px;      /* Card surface */
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Pulse showcase uses larger radii than the desktop theme */
+  --radius-pulse-card: 32px;
+  --radius-pulse-control: 16px;
+  --radius-pulse-thumb: 8px;
+
+  --border-width: 1px;                 /* ButtonBorderThemeThickness, CheckBox, ComboBox */
+  --border-width-focus: 2px;           /* TextControlBorderThemeThicknessFocused */
+
+  /* Fluent has no elevation ramp — depth is a 1px transient border over a
+     transient background. Keep shadows for popups only. */
+  --transient-border-light: #00000024;  /* opacity .14 over black */
+  --transient-border-dark: #0000005c;   /* opacity .36 over black */
+  --shadow-flyout: 0 8px 16px #00000026;
+}
